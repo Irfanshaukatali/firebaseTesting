@@ -17,8 +17,8 @@ const app = initializeApp(firebaseConfig);
 export default function App() {
   const emailRef = React.createRef(null);
   const passRef = React.createRef(null);
-  const email = React.createRef(null);
-  const pass = React.createRef(null);
+  // const email = React.createRef(null);
+  // const pass = React.createRef(null);
 
   const auth = getAuth();
   function handleSignUp() {
@@ -37,22 +37,22 @@ export default function App() {
         alert('sign Unsuccesfull');
       });
   }
-  function handleSignIn() {
-    createUserWithEmailAndPassword(
-      auth,
-      email,
-      pass
-    )
-      .then((userCredential) => {
-        const user = userCredential.user;
-        alert('signIN succesfull');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('signIn Unsuccesfull');
-      });
-  }
+  // function handleSignIn() {
+  //   createUserWithEmailAndPassword(
+  //     auth,
+  //     email,
+  //     pass
+  //   )
+  //     .then((userCredential) => {
+  //       const user = userCredential.user;
+  //       alert('signIN succesfull');
+  //     })
+  //     .catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       alert('signIn Unsuccesfull');
+  //     });
+  // }
 
   return (
     <div>
@@ -62,11 +62,11 @@ export default function App() {
       <br />
       <button onClick={handleSignUp}>signUp</button>
       <br/>
-      <h2>SignIn</h2>
+      {/* <h2>SignIn</h2>
       <input type="text" placeholder="email1223" ref={email} />
       <input type="text" placeholder="password123" ref={pass} />
       <br />
-      <button onClick={handleSignIn}>signUp</button>
+      <button onClick={handleSignIn}>signUp</button> */}
     </div>
   );
 }
